@@ -14,7 +14,7 @@ public class RaceDayV3
 
     public static void main(String[] args)
     {
-        // To use Scanner class import java.util.Scanner.
+        // To use Scanner class import java.util.Scanner
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -25,10 +25,11 @@ public class RaceDayV3
         System.out.println("--------------------------------------------------------------------------------------------");
 
         // Player 1 name choice
-        System.out.println("Player one choose name below");
+        System.out.println("Player One choose name below");
         System.out.print("Enter name: ");
         // Store user input in variable for player 1
         String playerOneName = keyboard.nextLine();
+        // Welcome player 1
         System.out.println("Welcome: " + playerOneName + " you are player 1.");
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -38,6 +39,7 @@ public class RaceDayV3
         System.out.print("Enter name: ");
         // Store user input in variable for player 2
         String playerTwoName = keyboard.nextLine();
+        // Welcome player 2
         System.out.println("Welcome: " + playerTwoName + " you are player 2.");
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -47,6 +49,7 @@ public class RaceDayV3
         System.out.print("Enter name: ");
         // Store user input in variable for player 3
         String playerThreeName = keyboard.nextLine();
+        // Welcome player 3
         System.out.println("Welcome: " + playerThreeName + " you are player 3.");
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -56,6 +59,7 @@ public class RaceDayV3
         System.out.print("Enter name: ");
         // Store user input in variable for player 4
         String playerFourName = keyboard.nextLine();
+        // Welcome player 4
         System.out.println("Welcome: " + playerFourName + " you are player 4.");
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -99,7 +103,7 @@ public class RaceDayV3
                 continue;
             }
 
-            // Must be below the number 10! e.g 10 is vaild, 11 is invalid!
+            // Must be below the number 11! e.g 10 is vaild, 11 is invalid!
             if (playerOneNumberChoice > 10)
             {
                 System.out.println("Please enter a number below 10");
@@ -109,8 +113,7 @@ public class RaceDayV3
 
             // The user entered a valid value.
             // We are now finished with the checks in the if / else statements
-            // so break out and continue
-            //At this stage, the number is an int >= 0
+            // The number is an int greater than 0 and less than 11
             System.out.println("User entered: " + playerOneNumberChoice);
             // User entered a valid number move on with the code!
             break;
@@ -153,7 +156,6 @@ public class RaceDayV3
                 // Continue until they input a valid number
                 continue;
             }
-
             // Number must be less than or equal to 10
             if (playerTwoNumberChoice > 10)
             {
@@ -161,13 +163,16 @@ public class RaceDayV3
                 // Continue until they input a valid number
                 continue;
             }
-
-            //At this stage, the number is an int >= 0
+            
+            // The user entered a valid value.
+            // We are now finished with the checks in the if / else statements
+            // The number is an int greater than 0 and less than 11
             System.out.println("User entered: " + playerTwoNumberChoice);
-            // User entered a valid number moce on with the code!
+            // User entered a valid number move on with the code!
             break;
         }
 
+        // Print out the name and number for player 2
         System.out.printf("%s your number is : %d\n", playerTwoName, playerTwoNumberChoice);
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -175,7 +180,7 @@ public class RaceDayV3
         // (The name player 3 entered above) choose a number between 1 - 10
         System.out.printf("%s choose a number between 1 - 10: ", playerThreeName);
 
-        // Decalre and initialize variable, set it to zero
+        // Decalre and initialize variable, set it to zero!
         int playerThreeNumberChoice = 0;
 
         // Input from user must be of type int
@@ -189,12 +194,15 @@ public class RaceDayV3
                 // invalid input
             } else
             {
+                // Print out that the number entered is not valid
+                // and get the user to try again!
                 System.out.println("Please enter a valid number");
                 keyboard.next();
                 // Continue until they input a valid number
                 continue;
             }
 
+            // Number must be greater than zero!
             if (playerThreeNumberChoice < 0)
             {
                 System.out.println("Please enter a number greater than 0");
@@ -202,6 +210,7 @@ public class RaceDayV3
                 continue;
             }
 
+            // Number must be less than or equal to 10
             if (playerThreeNumberChoice > 10)
             {
                 System.out.println("Please enter a number below 10");
@@ -209,12 +218,15 @@ public class RaceDayV3
                 continue;
             }
 
-            //At this stage, the number is an int >= 0
+            // The user entered a valid value.
+            // We are now finished with the checks in the if / else statements
+            // The number is an int greater than 0 and less than 11
             System.out.println("User entered: " + playerThreeNumberChoice);
-            // User entered a valid number moce on with the code!
+            // User entered a valid number move on with the code!
             break;
         }
 
+        // Print out the name and number for player 3
         System.out.printf("%s your number is : %d\n", playerThreeName, playerThreeNumberChoice);
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -236,12 +248,15 @@ public class RaceDayV3
                 // Invalid input
             } else
             {
+                // Print out that the number entered is not valid
+                // and get the user to try again!
                 System.out.println("Please enter a valid number");
                 keyboard.next();
                 // Continue until they input a valid number
                 continue;
             }
 
+            // Number must be greater than zero!
             if (playerFourNumberChoice < 0)
             {
                 System.out.println("Please enter a number greater than 0");
@@ -249,6 +264,7 @@ public class RaceDayV3
                 continue;
             }
 
+            // Number must be less than or equal to 10
             if (playerFourNumberChoice > 10)
             {
                 System.out.println("Please enter a number below 10");
@@ -256,12 +272,15 @@ public class RaceDayV3
                 continue;
             }
 
-            //At this stage, the number is an int >= 0
+            // The user entered a valid value.
+            // We are now finished with the checks in the if / else statements
+            // The number is an int greater than 0 and less than 11
             System.out.println("User entered: " + playerFourNumberChoice);
             // User entered a valid number moce on with the code!
             break;
         }
 
+        // Print out the name and number for player 4
         System.out.printf("%s your number is : %d\n", playerFourName, playerFourNumberChoice);
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -277,32 +296,45 @@ public class RaceDayV3
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
-        boolean stephensTest = true;
+        // Decalre and initialize this variable, set it to true!
+        boolean isSameValue = true;
 
         // Random class: import java.util.Random;
-        Random rand = new Random();
+        Random randomNumber = new Random();
 
+        // Decalare and initalize variable, set it to one!
         int min = 1;
 
+        // Decalare and initalize variable, set it to zero!
         int playerOneTotalTries = 0;
+        // Decalare and initalize variable, set it to zero!
         int playerTwoTotalTries = 0;
+        // Decalare and initalize variable, set it to zero!
         int playerThreeTotalTries = 0;
+        // Decalare and initalize variable, set it to zero!
         int playerFourTotalTries = 0;
 
+        // Keep running this code in the do {} until the variable
+        // isSameValue changes to false!
         do
         {
-            playerOneTotalTries = rand.nextInt(playerOneNumberChoice) + min * playerFourName.length()
-                    + rand.nextInt(playerOneNumberChoice - min) + min;
+            // Assign random number to player 1
+            playerOneTotalTries = randomNumber.nextInt(playerOneNumberChoice) + min * playerFourName.length()
+                    + randomNumber.nextInt(playerOneNumberChoice - min) + min;
 
-            playerTwoTotalTries = rand.nextInt(playerTwoNumberChoice) + 1 * playerThreeName.length()
-                    + rand.nextInt(playerTwoNumberChoice - min) + min;
+            // Assign random number to player 2
+            playerTwoTotalTries = randomNumber.nextInt(playerTwoNumberChoice) + 1 * playerThreeName.length()
+                    + randomNumber.nextInt(playerTwoNumberChoice - min) + min;
 
-            playerThreeTotalTries = rand.nextInt(playerThreeNumberChoice) + 1 * playerTwoName.length()
-                    + rand.nextInt(playerThreeNumberChoice - min) + min;
+            // Assign random number to player 3
+            playerThreeTotalTries = randomNumber.nextInt(playerThreeNumberChoice) + 1 * playerTwoName.length()
+                    + randomNumber.nextInt(playerThreeNumberChoice - min) + min;
 
-            playerFourTotalTries = rand.nextInt(playerFourNumberChoice) + 1 * playerOneName.length()
-                    + rand.nextInt(playerFourNumberChoice - min) + min;
+            // Assign random number to player 4
+            playerFourTotalTries = randomNumber.nextInt(playerFourNumberChoice) + 1 * playerOneName.length()
+                    + randomNumber.nextInt(playerFourNumberChoice - min) + min;
 
+            // Messy but effective code could be cleaned up!  Checks if any of the values are the same
             if (playerOneTotalTries == playerTwoTotalTries || playerOneTotalTries == playerThreeTotalTries
                     || playerOneTotalTries == playerFourTotalTries || playerTwoTotalTries == playerOneTotalTries
                     || playerTwoTotalTries == playerThreeTotalTries || playerTwoTotalTries == playerFourTotalTries
@@ -310,24 +342,17 @@ public class RaceDayV3
                     || playerThreeTotalTries == playerFourTotalTries || playerFourTotalTries == playerOneTotalTries
                     || playerFourTotalTries == playerTwoTotalTries || playerFourTotalTries == playerThreeTotalTries)
             {
+                // For testing purposes.  Please dont show this to the users!
                 System.out.println("Re-calculating numbers!");
-                stephensTest = false;
+                // Assign the variable false value!
+                isSameValue = false;
+                // Continue until there are no matches 
                 continue;
             }
+            // All numbers are different move on with the code
             break;
-        } while (stephensTest = true);
+        } while (isSameValue = true);
 
-//        int playerOneTotalTries = rand.nextInt(playerOneNumberChoice) + min * playerFourName.length() + 
-//                rand.nextInt(playerOneNumberChoice - min) + min;
-//
-//        int playerTwoTotalTries = rand.nextInt(playerTwoNumberChoice) + 1 * playerThreeName.length() + 
-//                rand.nextInt(playerTwoNumberChoice - min) + min;
-//
-//        int playerThreeTotalTries = rand.nextInt(playerThreeNumberChoice) + 1 * playerTwoName.length()  + 
-//                rand.nextInt(playerThreeNumberChoice - min) + min;
-//
-//        int playerFourTotalTries = rand.nextInt(playerFourNumberChoice) + 1 * playerOneName.length()  + 
-//                rand.nextInt(playerFourNumberChoice - min) + min;
         // Print out player 1's total tries represented as dots(...)
         for (int i = 0; i < playerOneTotalTries; i++)
         {
@@ -655,9 +680,9 @@ public class RaceDayV3
 
         // Enhanced for loop that loops through the finalContestantsArray
         // and welcomes the players to round 2
-        for (String finalContestantsArray1 : finalContestantsArray)
+        for (String finalContestants : finalContestantsArray)
         {
-            System.out.printf("Welcome to the final %s!\n", finalContestantsArray1);
+            System.out.printf("Welcome to the final %s!\n", finalContestants);
         }
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -760,56 +785,51 @@ public class RaceDayV3
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
-        stephensTest = true;
+        isSameValue = true;
 
-        int finalistPlayerOneTotalTries;
-        int finalistPlayerTwoTotalTries;
+        int finalistPlayerOneTotalTries = 0;
+        int finalistPlayerTwoTotalTries = 0;
 
         do
         {
-            finalistPlayerOneTotalTries = rand.nextInt(finalistPlayer1Number - min) + min * playerFourName.length()
-                    + rand.nextInt(finalistPlayer1Number - min) + min * playerOneName.length();
+            finalistPlayerOneTotalTries = randomNumber.nextInt(finalistPlayer1Number - min) + min * playerFourName.length()
+                    + randomNumber.nextInt(finalistPlayer1Number - min) + min * playerOneName.length();
 
-            finalistPlayerTwoTotalTries = rand.nextInt(finalistPlayer2Number - min) + min * playerTwoName.length()
-                    + rand.nextInt(finalistPlayer2Number - min) + min * playerThreeName.length();
+            finalistPlayerTwoTotalTries = randomNumber.nextInt(finalistPlayer2Number - min) + min * playerTwoName.length()
+                    + randomNumber.nextInt(finalistPlayer2Number - min) + min * playerThreeName.length();
             if (finalistPlayerOneTotalTries == finalistPlayerTwoTotalTries)
             {
-                System.out.println("Re-calcuulating nuumbers");
-                stephensTest = false;
+                System.out.println("Re-calculating nuumbers");
+                isSameValue = false;
                 continue;
             }
             break;
-        } while (stephensTest = true);
-//        int finalistPlayerOneTotalTries = rand.nextInt(finalistPlayer1Number - min) + min * playerFourName.length() + 
-//                rand.nextInt(finalistPlayer1Number - min) + min * playerOneName.length();
-//
-//        int finalistPlayerTwoTotalTries = rand.nextInt(finalistPlayer2Number - min) + min * playerTwoName.length() + 
-//                rand.nextInt(finalistPlayer2Number - min) + min * playerThreeName.length();
+        } while (isSameValue = true);
 
-        System.out.println();
-
-        System.out.println("--------------------------------------------------------------------------------------------");
-
+        // Print out player 1's total tries representated as dots(...)
         for (int i = 0; i < finalistPlayerOneTotalTries; i++)
         {
             System.out.print(".");
         }
+        // Print out player 1's name directly after the dots
         System.out.println(finalContestantsArray[0]);
 
+        // Print out player 1's total tries representated as dots(...)
         for (int i = 0; i < finalistPlayerTwoTotalTries; i++)
         {
             System.out.print(".");
         }
+        // Print out player 2's name directly after the dots
         System.out.println(finalContestantsArray[1]);
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
-        // Decalre and initialize an array and fill it with they numbers player 1 and player 2 entered
-        // For clarification remember player 1 from round one who came in first position got assigned 
-        // to the first element in the finalContestantsArray which equates to finalContestantsArray[0]
-        // position in the array.  Player 2 who came in secomd position in round one got assigned to 
-        //the second element in thefinalContestantsArray which equates to finalContestantsArray[1] 
-        // position in the array.
+        // Decalre and initialize an array and fill it with the numbers player 1 and player 2 have got 
+        // for total tries.  For clarification remember player 1 from round one who came in first position
+        // got assigned to the first element in the finalContestantsArray which equates to 
+        // finalContestantsArray[0] element in the array.  Player 2 who came in secomd position in round 
+        // one got assigned to the second element in thefinalContestantsArray which equates to 
+        // finalContestantsArray[1] element in the array.
         int[] finalistNumbersArray =
         {
             finalistPlayerOneTotalTries, finalistPlayerTwoTotalTries
