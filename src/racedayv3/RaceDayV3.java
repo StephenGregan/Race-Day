@@ -277,19 +277,57 @@ public class RaceDayV3
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
+        boolean stephensTest = true;
+
         // Random class: import java.util.Random;
         Random rand = new Random();
 
         int min = 1;
 
-        int playerOneTotalTries = rand.nextInt(playerOneNumberChoice) + 1 * playerFourName.length() + 70;
+        int playerOneTotalTries = 0;
+        int playerTwoTotalTries = 0;
+        int playerThreeTotalTries = 0;
+        int playerFourTotalTries = 0;
 
-        int playerTwoTotalTries = rand.nextInt(playerTwoNumberChoice) + 1 * playerThreeName.length() + 70;
+        do
+        {
+            playerOneTotalTries = rand.nextInt(playerOneNumberChoice) + min * playerFourName.length()
+                    + rand.nextInt(playerOneNumberChoice - min) + min;
 
-        int playerThreeTotalTries = rand.nextInt(playerThreeNumberChoice) + 1 * playerTwoName.length() + 70;
+            playerTwoTotalTries = rand.nextInt(playerTwoNumberChoice) + 1 * playerThreeName.length()
+                    + rand.nextInt(playerTwoNumberChoice - min) + min;
 
-        int playerFourTotalTries = rand.nextInt(playerFourNumberChoice) + 1 * playerOneName.length() + 70;
+            playerThreeTotalTries = rand.nextInt(playerThreeNumberChoice) + 1 * playerTwoName.length()
+                    + rand.nextInt(playerThreeNumberChoice - min) + min;
 
+            playerFourTotalTries = rand.nextInt(playerFourNumberChoice) + 1 * playerOneName.length()
+                    + rand.nextInt(playerFourNumberChoice - min) + min;
+
+            if (playerOneTotalTries == playerTwoTotalTries || playerOneTotalTries == playerThreeTotalTries
+                    || playerOneTotalTries == playerFourTotalTries || playerTwoTotalTries == playerOneTotalTries
+                    || playerTwoTotalTries == playerThreeTotalTries || playerTwoTotalTries == playerFourTotalTries
+                    || playerThreeTotalTries == playerOneTotalTries || playerThreeTotalTries == playerTwoTotalTries
+                    || playerThreeTotalTries == playerFourTotalTries || playerFourTotalTries == playerOneTotalTries
+                    || playerFourTotalTries == playerTwoTotalTries || playerFourTotalTries == playerThreeTotalTries)
+            {
+                System.out.println("Re-calculating numbers!");
+                stephensTest = false;
+                continue;
+            }
+            break;
+        } while (stephensTest = true);
+
+//        int playerOneTotalTries = rand.nextInt(playerOneNumberChoice) + min * playerFourName.length() + 
+//                rand.nextInt(playerOneNumberChoice - min) + min;
+//
+//        int playerTwoTotalTries = rand.nextInt(playerTwoNumberChoice) + 1 * playerThreeName.length() + 
+//                rand.nextInt(playerTwoNumberChoice - min) + min;
+//
+//        int playerThreeTotalTries = rand.nextInt(playerThreeNumberChoice) + 1 * playerTwoName.length()  + 
+//                rand.nextInt(playerThreeNumberChoice - min) + min;
+//
+//        int playerFourTotalTries = rand.nextInt(playerFourNumberChoice) + 1 * playerOneName.length()  + 
+//                rand.nextInt(playerFourNumberChoice - min) + min;
         // Print out player 1's total tries represented as dots(...)
         for (int i = 0; i < playerOneTotalTries; i++)
         {
@@ -722,9 +760,31 @@ public class RaceDayV3
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
-        int finalistPlayerOneTotalTries = rand.nextInt(finalistPlayer1Number) + 1 * playerFourName.length() + 70;
+        stephensTest = true;
 
-        int finalistPlayerTwoTotalTries = rand.nextInt(finalistPlayer2Number) + 1 * playerTwoName.length() + 70;
+        int finalistPlayerOneTotalTries;
+        int finalistPlayerTwoTotalTries;
+
+        do
+        {
+            finalistPlayerOneTotalTries = rand.nextInt(finalistPlayer1Number - min) + min * playerFourName.length()
+                    + rand.nextInt(finalistPlayer1Number - min) + min * playerOneName.length();
+
+            finalistPlayerTwoTotalTries = rand.nextInt(finalistPlayer2Number - min) + min * playerTwoName.length()
+                    + rand.nextInt(finalistPlayer2Number - min) + min * playerThreeName.length();
+            if (finalistPlayerOneTotalTries == finalistPlayerTwoTotalTries)
+            {
+                System.out.println("Re-calcuulating nuumbers");
+                stephensTest = false;
+                continue;
+            }
+            break;
+        } while (stephensTest = true);
+//        int finalistPlayerOneTotalTries = rand.nextInt(finalistPlayer1Number - min) + min * playerFourName.length() + 
+//                rand.nextInt(finalistPlayer1Number - min) + min * playerOneName.length();
+//
+//        int finalistPlayerTwoTotalTries = rand.nextInt(finalistPlayer2Number - min) + min * playerTwoName.length() + 
+//                rand.nextInt(finalistPlayer2Number - min) + min * playerThreeName.length();
 
         System.out.println();
 
