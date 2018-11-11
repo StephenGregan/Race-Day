@@ -20,44 +20,54 @@ public class RaceDayV3
         System.out.println("--------------------------------------------------------------------------------------------");
 
         // Welcome message
-        System.out.println("Welcome to Race Day!\n");
+        System.out.println("Welcome to Race Day!");
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
         // Player 1 name choice
-        System.out.println("Player one choose name below\n");
+        System.out.println("Player one choose name below");
         System.out.print("Enter name: ");
         // Store user input in variable for player 1
         String playerOneName = keyboard.nextLine();
         System.out.println("Welcome: " + playerOneName + " you are player 1.");
 
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // Player 2 name choice
-        System.out.println("\nPlayer Two choose name below\n");
+        System.out.println("Player Two choose name below");
         System.out.print("Enter name: ");
         // Store user input in variable for player 2
         String playerTwoName = keyboard.nextLine();
         System.out.println("Welcome: " + playerTwoName + " you are player 2.");
 
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // Player 3 name choice
-        System.out.println("\nPlayer Three choose name below\n");
+        System.out.println("Player Three choose name below");
         System.out.print("Enter name: ");
         // Store user input in variable for player 3
         String playerThreeName = keyboard.nextLine();
         System.out.println("Welcome: " + playerThreeName + " you are player 3.");
 
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // Player 4 name choice
-        System.out.println("\nPlayer Four choose name below\n");
+        System.out.println("Player Four choose name below");
         System.out.print("Enter name: ");
         // Store user input in variable for player 4
         String playerFourName = keyboard.nextLine();
         System.out.println("Welcome: " + playerFourName + " you are player 4.");
 
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // Prints out the players names to the console
-        System.out.printf("\nWelcome to Race Day: \n%s\n%s\n%s\n"
+        System.out.printf("Welcome to Race Day: \n%s\n%s\n%s\n"
                 + "%s\n", playerOneName, playerTwoName, playerThreeName, playerFourName);
 
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // (The name player 1 entered above) choose a number between 1 - 10
-        System.out.printf("\n%s choose a number between 1 - 10: ", playerOneName);
+        System.out.printf("%s choose a number between 1 - 10: ", playerOneName);
 
         // Declared and initialize the variable, set it to zero 
         int playerOneNumberChoice = 0;
@@ -109,8 +119,10 @@ public class RaceDayV3
         // Print out the name and number for player 1
         System.out.printf("%s your number is : %d\n", playerOneName, playerOneNumberChoice);
 
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // (The name player 2 entered above) choose a number between 1 - 10
-        System.out.printf("\n%s choose a number between 1 - 10: ", playerTwoName);
+        System.out.printf("%s choose a number between 1 - 10: ", playerTwoName);
 
         // Declare and initialize the variable, set it to zero!
         int playerTwoNumberChoice = 0;
@@ -158,8 +170,10 @@ public class RaceDayV3
 
         System.out.printf("%s your number is : %d\n", playerTwoName, playerTwoNumberChoice);
 
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // (The name player 3 entered above) choose a number between 1 - 10
-        System.out.printf("\n%s choose a number between 1 - 10: ", playerThreeName);
+        System.out.printf("%s choose a number between 1 - 10: ", playerThreeName);
 
         // Decalre and initialize variable, set it to zero
         int playerThreeNumberChoice = 0;
@@ -203,8 +217,10 @@ public class RaceDayV3
 
         System.out.printf("%s your number is : %d\n", playerThreeName, playerThreeNumberChoice);
 
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // (The name player 4 entered above) choose a number between 1 - 10
-        System.out.printf("\n%s choose a number between 1 - 10: ", playerFourName);
+        System.out.printf("%s choose a number between 1 - 10: ", playerFourName);
 
         // Decalre and initialize variable, set it to zero
         int playerFourNumberChoice = 0;
@@ -225,7 +241,7 @@ public class RaceDayV3
                 // Continue until they input a valid number
                 continue;
             }
- 
+
             if (playerFourNumberChoice < 0)
             {
                 System.out.println("Please enter a number greater than 0");
@@ -248,46 +264,31 @@ public class RaceDayV3
 
         System.out.printf("%s your number is : %d\n", playerFourName, playerFourNumberChoice);
 
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // Print out all players names and numbers
-        System.out.printf("\nName: %s\tNumber: %d\nName: %s\tNumber: %d\nName: %s\tNumber: %d\nName: "
+        System.out.printf("Name: %s\tNumber: %d\nName: %s\tNumber: %d\nName: %s\tNumber: %d\nName: "
                 + "%s\tNumber: %d\n", playerOneName, playerOneNumberChoice, playerTwoName, playerTwoNumberChoice,
                 playerThreeName, playerThreeNumberChoice, playerFourName, playerFourNumberChoice);
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
-        System.out.println("\nYour turns will now be calculated randomly!\n");
+        System.out.println("Your turns will now be calculated randomly!");
+
+        System.out.println("--------------------------------------------------------------------------------------------");
 
         // Random class: import java.util.Random;
         Random rand = new Random();
 
         int min = 1;
 
-        int playerOneTotalTries = ThreadLocalRandom.current().nextInt(min, playerOneNumberChoice)
-                + min + playerFourName.length() + rand.nextInt(50);
-        //System.out.printf("\n%s you have %d number of tries!", playerOneName, playerOneTotalTries);
+        int playerOneTotalTries = rand.nextInt(playerOneNumberChoice) + 1 * playerFourName.length() + 70;
 
-        int playerTwoTotalTries = ThreadLocalRandom.current().nextInt(min, playerTwoNumberChoice)
-                + min + playerThreeName.length() + rand.nextInt(50);
-        //System.out.printf("\n%s you have %d number of tries!", playerTwoName, playerTwoTotalTries);
+        int playerTwoTotalTries = rand.nextInt(playerTwoNumberChoice) + 1 * playerThreeName.length() + 70;
 
-        int playerThreeTotalTries = ThreadLocalRandom.current().nextInt(min, playerThreeNumberChoice)
-                + min + playerTwoName.length() + rand.nextInt(50);
-        //System.out.printf("\n%s you have %d number of tries!", playerThreeName, playerTwoTotalTries);
+        int playerThreeTotalTries = rand.nextInt(playerThreeNumberChoice) + 1 * playerTwoName.length() + 70;
 
-        int playerFourTotalTries = ThreadLocalRandom.current().nextInt(min, playerFourNumberChoice)
-                + min + playerOneName.length() + rand.nextInt(50);
-        //System.out.printf("\n%s you have %d number of tries!", playerFourName, playerFourTotalTries);
-
-//        int playerOneTotalTries = rand.nextInt(playerOneNumberChoice * playerFourName.length() / 2
-//                + playerTwoName.length()) + 1;
-//        int playerTwoTotalTries = rand.nextInt(playerTwoNumberChoice * playerThreeName.length() / 2
-//                + playerOneName.length()) + 1;
-//        int playerThreeTotalTries = rand.nextInt(playerThreeNumberChoice * playerTwoName.length() / 2
-//                + playerFourName.length()) + 1;
-//        int playerFourTotalTries = rand.nextInt(playerFourNumberChoice * playerOneName.length() / 2
-//                + playerThreeName.length()) + 1;
-
-        System.out.println("--------------------------------------------------------------------------------------------");
+        int playerFourTotalTries = rand.nextInt(playerFourNumberChoice) + 1 * playerOneName.length() + 70;
 
         // Print out player 1's total tries represented as dots(...)
         for (int i = 0; i < playerOneTotalTries; i++)
@@ -388,11 +389,9 @@ public class RaceDayV3
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
-        System.out.println("------------");
-
         System.out.println("Leaderboard");
 
-        System.out.println("------------");
+        System.out.println("-----------");
 
         // If player 1's total tries equals the second highest value they came first
         if (playerOneTotalTries == highestValue)
@@ -614,7 +613,7 @@ public class RaceDayV3
 
         System.out.println("--------------------------------------------------------------------------------------------");
         System.out.println("Round 2");
-        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("-------");
 
         // Enhanced for loop that loops through the finalContestantsArray
         // and welcomes the players to round 2
@@ -668,6 +667,9 @@ public class RaceDayV3
         System.out.println("User entered: " + finalistPlayer1Number);
         // Print out the number the player typed.
         System.out.printf("%s your number is : %d\n", finalContestantsArray[0], finalistPlayer1Number);
+
+        System.out.println("--------------------------------------------------------------------------------------------");
+
         // Ask the next player to pick a number between 1 - 10
         System.out.printf("%s please choose a number between 1 - 10: ", finalContestantsArray[1]);
 
@@ -714,27 +716,27 @@ public class RaceDayV3
         // Print out the number the player typed.
         System.out.printf("%s your number is : %d\n", finalContestantsArray[1], finalistPlayer2Number);
 
-        System.out.println("\nYour turns will now be calculated randomly!");
+        System.out.println("--------------------------------------------------------------------------------------------");
 
-        int finalistPlayer1TotalTries = ThreadLocalRandom.current().nextInt(min, playerOneNumberChoice)
-                + min + playerOneName.length() + rand.nextInt(50);
-        System.out.printf("\n%s you have %d number of tries!", finalContestantsArray[0], finalistPlayer1TotalTries);
+        System.out.println("Your turns will now be calculated randomly!");
 
-        int finalistPlayer2TotalTries = ThreadLocalRandom.current().nextInt(min, playerTwoNumberChoice)
-                + min + playerTwoName.length() + rand.nextInt(50);
-        System.out.printf("\n%s you have %d number of tries!", finalContestantsArray[1], finalistPlayer2TotalTries);
+        System.out.println("--------------------------------------------------------------------------------------------");
+
+        int finalistPlayerOneTotalTries = rand.nextInt(finalistPlayer1Number) + 1 * playerFourName.length() + 70;
+
+        int finalistPlayerTwoTotalTries = rand.nextInt(finalistPlayer2Number) + 1 * playerTwoName.length() + 70;
 
         System.out.println();
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
-        for (int i = 0; i < finalistPlayer1TotalTries; i++)
+        for (int i = 0; i < finalistPlayerOneTotalTries; i++)
         {
             System.out.print(".");
         }
         System.out.println(finalContestantsArray[0]);
 
-        for (int i = 0; i < finalistPlayer2TotalTries; i++)
+        for (int i = 0; i < finalistPlayerTwoTotalTries; i++)
         {
             System.out.print(".");
         }
@@ -750,20 +752,20 @@ public class RaceDayV3
         // position in the array.
         int[] finalistNumbersArray =
         {
-            finalistPlayer1TotalTries, finalistPlayer2TotalTries
+            finalistPlayerOneTotalTries, finalistPlayerTwoTotalTries
         };
         // Check if player 1's score is greater than player 2's score
-        if (finalistPlayer1TotalTries > finalistPlayer2TotalTries)
+        if (finalistPlayerOneTotalTries > finalistPlayerTwoTotalTries)
         {
             // Print out that player 1's score is greater than player 2's score and declare him the winner!
             System.out.printf("%s won with a final score of : %d congradulations", finalContestantsArray[0],
-                    finalistPlayer1TotalTries);
+                    finalistPlayerOneTotalTries);
         } // Check if player 2's score is greater than player 1's score
         else
         {
             // Print out that player 2's score is greater than player 1's score and decalre him the winner!
             System.out.printf("%s won with a final score of : %d congradulations", finalContestantsArray[1],
-                    finalistPlayer2TotalTries);
+                    finalistPlayerTwoTotalTries);
             System.out.println();
         }
 
@@ -781,29 +783,29 @@ public class RaceDayV3
 
         System.out.println("Final Scoreboard");
 
-        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("----------------");
 
         // Explanation IF / ELSE With only two players up against eachother there 
         // is no need to assign the secondHighest value in the array as you can just
         // print the oposite element in the array to state who won and who came in
         // second position. e.g lines 799 and 801 or line 809 and 811.
         // Check if player 1's total tries is equal to the highestValue variable
-        if (finalistPlayer1TotalTries == highestValue)
+        if (finalistPlayerOneTotalTries == highestValue)
         {
             // If it is print out that they won
             // Example: Winner Stephen with 1000 steps
-            System.out.printf("Winner %s with %d steps", finalContestantsArray[0], finalistPlayer1TotalTries);
+            System.out.printf("Winner %s with %d steps", finalContestantsArray[0], finalistPlayerOneTotalTries);
             System.out.println();
-            System.out.printf("Runner up %s with %d steps", finalContestantsArray[1], finalistPlayer2TotalTries);
+            System.out.printf("Runner up %s with %d steps", finalContestantsArray[1], finalistPlayerTwoTotalTries);
             System.out.println();
         } // Check if player 2's total tries is equal to the highestValue variable
         else
         {
             // If it is print out that they won
             // Example: Winner Stephen with 1000 steps
-            System.out.printf("Winner %s with %d steps", finalContestantsArray[1], finalistPlayer2TotalTries);
+            System.out.printf("Winner %s with %d steps", finalContestantsArray[1], finalistPlayerTwoTotalTries);
             System.out.println();
-            System.out.printf("Runner up %s with %d steps", finalContestantsArray[0], finalistPlayer1TotalTries);
+            System.out.printf("Runner up %s with %d steps", finalContestantsArray[0], finalistPlayerOneTotalTries);
             System.out.println();
         }
 
