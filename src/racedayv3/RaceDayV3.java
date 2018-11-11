@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
- * @author Stephen Gregan Student Number : Sba18003
+ * @author Stephen Gregan 
  */
 public class RaceDayV3
 {
@@ -163,7 +163,7 @@ public class RaceDayV3
                 // Continue until they input a valid number
                 continue;
             }
-            
+
             // The user entered a valid value.
             // We are now finished with the checks in the if / else statements
             // The number is an int greater than 0 and less than 11
