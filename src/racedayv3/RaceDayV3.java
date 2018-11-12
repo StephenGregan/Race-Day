@@ -150,7 +150,7 @@ public class RaceDayV3
         int playerOneNumberChoice = 0;
 
         // specify that the input must be of type int
-        while (keyboard.hasNextInt())
+        while (keyboard.hasNextLine())
         {
             // If the input is of type int,
             if (keyboard.hasNextInt())
@@ -204,7 +204,7 @@ public class RaceDayV3
         int playerTwoNumberChoice = 0;
 
         // Input from user must be of type int
-        while (keyboard.hasNextInt())
+        while (keyboard.hasNextLine())
         {
             // If input is of type int,
             if (keyboard.hasNextInt())
@@ -257,7 +257,7 @@ public class RaceDayV3
         int playerThreeNumberChoice = 0;
 
         // Input from user must be of type int
-        while (keyboard.hasNextInt())
+        while (keyboard.hasNextLine())
         {
             // If input is of type int,
             if (keyboard.hasNextInt())
@@ -311,7 +311,7 @@ public class RaceDayV3
         int playerFourNumberChoice = 0;
 
         // Input from user must be of type int
-        while (keyboard.hasNextInt())
+        while (keyboard.hasNextLine())
         {
             // If input is of type int,
             if (keyboard.hasNextInt())
@@ -407,6 +407,7 @@ public class RaceDayV3
                     + randomNumber.nextInt(40) + 1;
 
             // Messy but effective code could be cleaned up!  Checks if any of the values are the same
+            // Used for safe guarding against duplicate values!
             if (playerOneTotalTries == playerTwoTotalTries || playerOneTotalTries == playerThreeTotalTries
                     || playerOneTotalTries == playerFourTotalTries || playerTwoTotalTries == playerOneTotalTries
                     || playerTwoTotalTries == playerThreeTotalTries || playerTwoTotalTries == playerFourTotalTries
@@ -771,7 +772,7 @@ public class RaceDayV3
         int finalistPlayer1Number = 0;
 
         // Specifies that the input must be of type int
-        while (keyboard.hasNextInt())
+        while (keyboard.hasNextLine())
         {
             // If the input is of type int,
             if (keyboard.hasNextInt())
@@ -817,7 +818,7 @@ public class RaceDayV3
         int finalistPlayer2Number = 0;
 
         // Specifies that the input must be of type int
-        while (keyboard.hasNextInt())
+        while (keyboard.hasNextLine())
         {
             // If the input is of type int,
             if (keyboard.hasNextInt())
