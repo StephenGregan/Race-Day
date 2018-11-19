@@ -146,11 +146,11 @@ public class RaceDayV3
         // (The name player 1 entered above) choose a number between 1 - 10
         System.out.printf("%s choose a number between 1 - 10: ", playerOneName);
 
-        // Declared and initialize the variable, set it to zero 
+        // Declare and initialize the variable, set it to zero 
         int playerOneNumberChoice = 0;
 
         // Specify that the input must be of type int
-        // If it is not the user will get the mesaage
+        // If it is not the user will get the message
         // "Please enter a valid number"
         while (keyboard.hasNextLine())
         {
@@ -206,7 +206,7 @@ public class RaceDayV3
         int playerTwoNumberChoice = 0;
 
         // Specify that the input must be of type int
-        // If it is not the user will get the mesaage
+        // If it is not the user will get the message
         // "Please enter a valid number"
         while (keyboard.hasNextLine())
         {
@@ -317,7 +317,7 @@ public class RaceDayV3
         int playerFourNumberChoice = 0;
 
         // Specify that the input must be of type int
-        // If it is not the user will get the mesaage
+        // If it is not the user will get the message
         // "Please enter a valid number"
         while (keyboard.hasNextLine())
         {
@@ -383,19 +383,19 @@ public class RaceDayV3
         // Random class: import java.util.Random;
         Random randomNumber = new Random();
 
-        // Decalare and initalize variable, set it to 20 * 2 = 40!
+        // Declare and initalize variable, set it to 20 * 2 = 40!
         int numberCalculation = 20 * 2;
 
-        // Decalare and initalize variable, set it to zero!
+        // Declare and initalize variable, set it to zero!
         int playerOneTotalSteps = 0;
 
-        // Decalare and initalize variable, set it to zero!
+        // Declare and initalize variable, set it to zero!
         int playerTwoTotalSteps = 0;
 
-        // Decalare and initalize variable, set it to zero!
+        // Declare and initalize variable, set it to zero!
         int playerThreeTotalSteps = 0;
 
-        // Decalare and initalize variable, set it to zero!
+        // Declare and initalize variable, set it to zero!
         int playerFourTotalSteps = 0;
 
         // Keep running this code in the do {} until the variable
@@ -427,14 +427,14 @@ public class RaceDayV3
                 // System.out.println("Re-calculating numbers!");
                 // Change the value to false!
                 isSameValue = false;
-                // Continue until there are no matches 
+                // Continue until there are no matches...
                 continue;
             }
             // All numbers are different move on with the code!
             break;
         } while (isSameValue = true);
 
-        // Print out player 1's total tries represented as dots(...)
+        // Print out player 1's total steps represented as dots(...)
         for (int i = 0; i < playerOneTotalSteps; i++)
         {
             System.out.print(".");
@@ -442,7 +442,7 @@ public class RaceDayV3
         // Print player 1's name directly after the dots
         System.out.print(playerOneName + "\n");
 
-        // Print out player 2's total tries represented as dots(...)
+        // Print out player 2's total steps represented as dots(...)
         for (int i = 0; i < playerTwoTotalSteps; i++)
         {
             System.out.print(".");
@@ -450,7 +450,7 @@ public class RaceDayV3
         // Print player 2's name directly after dots(...)
         System.out.print(playerTwoName + "\n");
 
-        // Print out player 3's total tries represented as dots(...)
+        // Print out player 3's total steps represented as dots(...)
         for (int i = 0; i < playerThreeTotalSteps; i++)
         {
             System.out.print(".");
@@ -805,7 +805,7 @@ public class RaceDayV3
                 System.out.printf("%s please enter a number greater than 0: ", finalContestantsNamesArray[0]);
                 continue;
             }
-            // Must be below the number 10! e.g 10 is vaild, 11 is invalid!
+            // Must be below the number 11! e.g 10 is vaild, 11 is invalid!
             if (finalistPlayerOneNumber > 10)
             {
                 System.out.printf("%s please enter a number less than 11: ", finalContestantsNamesArray[0]);
@@ -817,7 +817,7 @@ public class RaceDayV3
             break;
         }
         System.out.println("User entered: " + finalistPlayerOneNumber);
-        // Print out the number the player typed.
+        // Print out the number the player typed
         System.out.printf("%s your number is : %d\n", finalContestantsNamesArray[0], finalistPlayerOneNumber);
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -855,7 +855,7 @@ public class RaceDayV3
                 // Contine until they enter a number greater than zero
                 continue;
             }
-            // Must be below the number 10! e.g 10 is vaild, 11 is invalid!
+            // Must be below the number 11! e.g 10 is vaild, 11 is invalid!
             if (finalistPlayerTwoNumber > 10)
             {
                 System.out.printf("%s please enter a number less than 11: ", finalContestantsNamesArray[1]);
@@ -873,11 +873,13 @@ public class RaceDayV3
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
+        // Print out the finalists names and numbers!
         System.out.printf("Name: %s \t\tNumber: %d\nName: %s \t\tNumber: %d\n", finalContestantsNamesArray[0], finalistPlayerOneNumber,
                 finalContestantsNamesArray[1], finalistPlayerTwoNumber);
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
+        // Tell the finalists that their numbers will now be randomised!
         System.out.println("Your turns will now be calculated randomly!");
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -934,7 +936,7 @@ public class RaceDayV3
         // Declare and initialize an array and fill it with the numbers player 1 and player 2 have got 
         // for total steps.  For clarification remember player 1 from round one who came in first position
         // got assigned to the first element in the finalContestantsNamesArray which equates to 
-        // finalContestantsNamesArray[0] element in the array.  Player 2 who came in secomd position in round 
+        // finalContestantsNamesArray[0] element in the array.  Player 2 who came in second position in round 
         // one got assigned to the second element in thefinalContestantsNamesArray which equates to 
         // finalContestantsNamesArray[1] element in the array.
         int[] finalistTotalStepsArray =
@@ -945,7 +947,7 @@ public class RaceDayV3
         // Sort the finalistTotalStepsArray array
         Arrays.sort(finalistTotalStepsArray);
 
-        // Assign the highest value to the variable below
+        // Assign the highest value in the array to the variable below
         // With only two players up against eachother there is no need to assign the 
         // secondHighest value in the array as you can just print the opposite element 
         // in the array to state who won and who came in second position.
@@ -964,7 +966,7 @@ public class RaceDayV3
         else
         {
             // If it is print out that they won
-            // Example: Winner Stephen with 1000 steps
+            // Example: Winner Calvin with 1000 steps
             System.out.printf("Winner %s with %d steps", finalContestantsNamesArray[1], finalistPlayerTwoTotalSteps);
             System.out.println();
             System.out.printf("Runner up %s with %d steps", finalContestantsNamesArray[0], finalistPlayerOneTotalSteps);
@@ -999,7 +1001,7 @@ public class RaceDayV3
         } // Check if player 2's score is greater than player 1's score
         else
         {
-            // Print out that player 2's score is greater than player 1's score and decalre them the winner!
+            // Print out that player 2's score is greater than player 1's score and declare them the winner!
             System.out.printf("%s won with a final score of: %d congratulations", finalContestantsNamesArray[1],
                     finalistPlayerTwoTotalSteps);
             System.out.println();
