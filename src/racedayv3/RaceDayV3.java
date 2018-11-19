@@ -3,7 +3,6 @@ package racedayv3;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
@@ -35,6 +34,7 @@ public class RaceDayV3
         System.out.println("--------------------------------------------------------------------------------------------");
 
         // Declare and initialize variable below, set the value to true
+        // The default value for a boolean is false!
         boolean isSameValue = true;
 
         // Declare and initialize variable below, set value to an empty string
@@ -54,7 +54,7 @@ public class RaceDayV3
             {
                 System.out.println("The name you entered has already been assigned to another player");
                 // Give user alternate suggestions
-                System.out.printf("Suggestions for alternate names\n%s, %s, %s, %s\n", playerTwoName.concat("123"),
+                System.out.printf("Suggestions for alternate names:\n%s, %s, %s, %s\n", playerTwoName.concat("123"),
                         playerTwoName.concat("25"), playerTwoName.concat("99"), playerTwoName.concat("55"));
                 isSameValue = false;
                 // Continue until user enters a valid name
@@ -88,7 +88,7 @@ public class RaceDayV3
             {
                 System.out.println("The name you entered has already been assigned to another player");
                 // Give user alternate suggestions
-                System.out.printf("Suggestions for alternate names\n%s, %s, %s, %s\n", playerThreeName.concat("123"),
+                System.out.printf("Suggestions for alternate names:\n%s, %s, %s, %s\n", playerThreeName.concat("123"),
                         playerThreeName.concat("25"), playerThreeName.concat("99"), playerThreeName.concat("55"));
                 isSameValue = false;
                 // Continue until user enters a valid name
@@ -123,7 +123,7 @@ public class RaceDayV3
             {
                 System.out.println("The name you entered has already been assigned to another player");
                 // Give user alternate suggestions
-                System.out.printf("Suggestions for alternate names\n%s, %s, %s, %s\n", playerFourName.concat("123"),
+                System.out.printf("Suggestions for alternate names:\n%s, %s, %s, %s\n", playerFourName.concat("123"),
                         playerFourName.concat("25"), playerFourName.concat("99"), playerFourName.concat("55"));
                 isSameValue = false;
                 // Continue until user enters a valid name
@@ -181,7 +181,7 @@ public class RaceDayV3
             // Must be below the number 11! e.g 10 is vaild, 11 is invalid!
             if (playerOneNumberChoice > 10)
             {
-                System.out.printf("%s please enter a number below 10: ", playerOneName);
+                System.out.printf("%s please enter a number less than 11: ", playerOneName);
                 // Continue until user inputs a valid number
                 continue;
             }
@@ -236,7 +236,7 @@ public class RaceDayV3
             // Must be below the number 11! e.g 10 is vaild, 11 is invalid!
             if (playerTwoNumberChoice > 10)
             {
-                System.out.printf("%s please enter a number below 10: ", playerTwoName);
+                System.out.printf("%s please enter a number less than 11: ", playerTwoName);
                 // Continue until user inputs a valid number
                 continue;
             }
@@ -292,7 +292,7 @@ public class RaceDayV3
             // Must be below the number 11! e.g 10 is vaild, 11 is invalid!
             if (playerThreeNumberChoice > 10)
             {
-                System.out.printf("%s please enter a number below 10: ", playerThreeName);
+                System.out.printf("%s please enter a number less than 11: ", playerThreeName);
                 // Continue until user inputs a valid number
                 continue;
             }
@@ -348,7 +348,7 @@ public class RaceDayV3
             // Must be below the number 11! e.g 10 is vaild, 11 is invalid!
             if (playerFourNumberChoice > 10)
             {
-                System.out.printf("%s please enter a number below 10: ", playerFourName);
+                System.out.printf("%s please enter a number less than 11: ", playerFourName);
                 // Continue until user inputs a valid number
                 continue;
             }
@@ -367,8 +367,8 @@ public class RaceDayV3
         System.out.println("--------------------------------------------------------------------------------------------");
 
         // Print out all players names and numbers
-        System.out.printf("Name: %s\tNumber: %d\nName: %s\tNumber: %d\nName: %s\tNumber: %d\nName: "
-                + "%s\tNumber: %d\n", playerOneName, playerOneNumberChoice, playerTwoName, playerTwoNumberChoice,
+        System.out.printf("Name: %s\t\tNumber: %d\nName: %s\t\tNumber: %d\nName: %s\t\tNumber: %d\nName: "
+                + "%s\t\tNumber: %d\n", playerOneName, playerOneNumberChoice, playerTwoName, playerTwoNumberChoice,
                 playerThreeName, playerThreeNumberChoice, playerFourName, playerFourNumberChoice);
 
         System.out.println("--------------------------------------------------------------------------------------------");
@@ -382,9 +382,6 @@ public class RaceDayV3
 
         // Random class: import java.util.Random;
         Random randomNumber = new Random();
-
-        // Decalare and initalize variable, set it to one!
-        int min = 1;
 
         // Decalare and initalize variable, set it to 20 * 2 = 40!
         int numberCalculation = 20 * 2;
@@ -405,16 +402,16 @@ public class RaceDayV3
         // isSameValue changes to false!
         do
         {
-            playerOneTotalSteps = ThreadLocalRandom.current().nextInt(min, playerOneNumberChoice + 1) + playerFourName.length()
+            playerOneTotalSteps = (playerOneNumberChoice + randomNumber.nextInt(playerOneNumberChoice) + 1) + playerFourName.length()
                     + randomNumber.nextInt(numberCalculation) + 1;
 
-            playerTwoTotalSteps = ThreadLocalRandom.current().nextInt(min, playerTwoNumberChoice + 1) + playerThreeName.length()
+            playerTwoTotalSteps = (playerTwoNumberChoice + randomNumber.nextInt(playerTwoNumberChoice) + 1) + playerThreeName.length()
                     + randomNumber.nextInt(numberCalculation) + 1;
 
-            playerThreeTotalSteps = ThreadLocalRandom.current().nextInt(min, playerThreeNumberChoice + 1) + playerTwoName.length()
+            playerThreeTotalSteps = (playerThreeNumberChoice + randomNumber.nextInt(playerThreeNumberChoice) + 1) + playerTwoName.length()
                     + randomNumber.nextInt(numberCalculation) + 1;
 
-            playerFourTotalSteps = ThreadLocalRandom.current().nextInt(min, playerFourNumberChoice + 1) + playerOneName.length()
+            playerFourTotalSteps = (playerFourNumberChoice + randomNumber.nextInt(playerFourNumberChoice) + 1) + playerOneName.length()
                     + randomNumber.nextInt(numberCalculation) + 1;
 
             // Checks if any of the values are the same
@@ -427,7 +424,7 @@ public class RaceDayV3
                     || playerFourTotalSteps == playerTwoTotalSteps || playerFourTotalSteps == playerThreeTotalSteps)
             {
                 // For testing purposes.  Please dont show this to the users!
-                System.out.println("Re-calculating numbers!");
+                // System.out.println("Re-calculating numbers!");
                 // Change the value to false!
                 isSameValue = false;
                 // Continue until there are no matches 
@@ -471,7 +468,7 @@ public class RaceDayV3
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
-        // Decalre and initialize array with all the players total steps
+        // Declare and initialize array with all the players total steps
         // You could write the code like this : int[] playersTotalStepsArray = new int[4];
         //                                      playersTotalStepsArray[0] = playerOneTotalSteps; etc
         // This way is better when you have the the information you want to store in the array now!
@@ -709,28 +706,28 @@ public class RaceDayV3
         {
             // Print out a message to player 1 to state that they have not made 
             // it to round 2
-            System.out.printf("Better luck next time %s.", playerOneName);
+            System.out.printf("Better luck next time %s", playerOneName);
             System.out.println();
         } // Checks the second lowest score
         else if (playerTwoTotalSteps == secondLowestValue)
         {
             // Print out a message to player 2 to state that they have not made 
             // it to round 2
-            System.out.printf("Better luck next time %s.", playerTwoName);
+            System.out.printf("Better luck next time %s", playerTwoName);
             System.out.println();
         } // Checks the second lowest score
         else if (playerThreeTotalSteps == secondLowestValue)
         {
             // Print out a message to player 3 to state that they have not made 
             // it to round 2
-            System.out.printf("Better luck next time %s.", playerThreeName);
+            System.out.printf("Better luck next time %s", playerThreeName);
             System.out.println();
         } // Checks the second lowest score
         else
         {
             // Print out a message to player 4 to state that they have not made 
             // it to round 2
-            System.out.printf("Better luck next time %s.", playerFourName);
+            System.out.printf("Better luck next time %s", playerFourName);
             System.out.println();
         }
         // Checks the lowest score
@@ -738,28 +735,28 @@ public class RaceDayV3
         {
             // Print out a message to player 1 to state that they have not made 
             // it to round 2
-            System.out.printf("Better luck next time %s.", playerOneName);
+            System.out.printf("Better luck next time %s", playerOneName);
             System.out.println();
         } // Checks the lowest score
         else if (playerTwoTotalSteps == lowestValue)
         {
             // Print out a message to player 2 to state that they have not made 
             // it to round 2
-            System.out.printf("Better luck next time %s.", playerTwoName);
+            System.out.printf("Better luck next time %s", playerTwoName);
             System.out.println();
         } // Checks the lowest score
         else if (playerThreeTotalSteps == lowestValue)
         {
             // Print out a message to player 3 to state that they have not made 
             // it to round 2
-            System.out.printf("Better luck next time %s.", playerThreeName);
+            System.out.printf("Better luck next time %s", playerThreeName);
             System.out.println();
         } // Checks the lowest score
         else
         {
             // Print out a message to player 4 to state that they have not made 
             // it to round 2
-            System.out.printf("Better luck next time %s.", playerFourName);
+            System.out.printf("Better luck next time %s", playerFourName);
             System.out.println();
         }
 
@@ -780,7 +777,7 @@ public class RaceDayV3
         System.out.printf("%s please choose a number between 1 - 10: ", finalContestantsNamesArray[0]);
 
         // Declare and initialize variable, set it to zero!
-        int finalistPlayer1Number = 0;
+        int finalistPlayerOneNumber = 0;
 
         // Specify that the input must be of type int
         // If it is not the user will get the mesaage
@@ -791,7 +788,7 @@ public class RaceDayV3
             if (keyboard.hasNextInt())
             {
                 // store that number in this variable
-                finalistPlayer1Number = keyboard.nextInt();
+                finalistPlayerOneNumber = keyboard.nextInt();
                 // Invalid input
             } else
             {
@@ -803,15 +800,15 @@ public class RaceDayV3
                 continue;
             }
             // Must be a number greater than zero!
-            if (finalistPlayer1Number <= 0)
+            if (finalistPlayerOneNumber <= 0)
             {
                 System.out.printf("%s please enter a number greater than 0: ", finalContestantsNamesArray[0]);
                 continue;
             }
             // Must be below the number 10! e.g 10 is vaild, 11 is invalid!
-            if (finalistPlayer1Number > 10)
+            if (finalistPlayerOneNumber > 10)
             {
-                System.out.printf("%s please enter a number below 10: ", finalContestantsNamesArray[0]);
+                System.out.printf("%s please enter a number less than 11: ", finalContestantsNamesArray[0]);
                 continue;
             }
             // The user entered a valid value
@@ -819,9 +816,9 @@ public class RaceDayV3
             // Now we can break out and move to the next section of the code!
             break;
         }
-        System.out.println("User entered: " + finalistPlayer1Number);
+        System.out.println("User entered: " + finalistPlayerOneNumber);
         // Print out the number the player typed.
-        System.out.printf("%s your number is : %d\n", finalContestantsNamesArray[0], finalistPlayer1Number);
+        System.out.printf("%s your number is : %d\n", finalContestantsNamesArray[0], finalistPlayerOneNumber);
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
@@ -829,7 +826,7 @@ public class RaceDayV3
         System.out.printf("%s please choose a number between 1 - 10: ", finalContestantsNamesArray[1]);
 
         // Declare and initialize a variable for player 2
-        int finalistPlayer2Number = 0;
+        int finalistPlayerTwoNumber = 0;
 
         // Specify that the input must be of type int
         // If it is not the user will get the mesaage
@@ -840,7 +837,7 @@ public class RaceDayV3
             if (keyboard.hasNextInt())
             {
                 // store that number in this variable
-                finalistPlayer2Number = keyboard.nextInt();
+                finalistPlayerTwoNumber = keyboard.nextInt();
                 // Invalid input
             } else
             {
@@ -852,16 +849,16 @@ public class RaceDayV3
                 continue;
             }
             // Must be a number greater than zero!
-            if (finalistPlayer2Number <= 0)
+            if (finalistPlayerTwoNumber <= 0)
             {
                 System.out.printf("%s please enter a number greater than 0: ", finalContestantsNamesArray[1]);
                 // Contine until they enter a number greater than zero
                 continue;
             }
             // Must be below the number 10! e.g 10 is vaild, 11 is invalid!
-            if (finalistPlayer2Number > 10)
+            if (finalistPlayerTwoNumber > 10)
             {
-                System.out.printf("%s please enter a number below 10: ", finalContestantsNamesArray[1]);
+                System.out.printf("%s please enter a number less than 11: ", finalContestantsNamesArray[1]);
                 continue;
             }
             // The user entered a valid value.
@@ -870,9 +867,14 @@ public class RaceDayV3
             break;
         }
 
-        System.out.println("User entered: " + finalistPlayer2Number);
+        System.out.println("User entered: " + finalistPlayerTwoNumber);
         // Print out the number the player typed.
-        System.out.printf("%s your number is : %d\n", finalContestantsNamesArray[1], finalistPlayer2Number);
+        System.out.printf("%s your number is : %d\n", finalContestantsNamesArray[1], finalistPlayerTwoNumber);
+
+        System.out.println("--------------------------------------------------------------------------------------------");
+
+        System.out.printf("Name: %s \t\tNumber: %d\nName: %s \t\tNumber: %d\n", finalContestantsNamesArray[0], finalistPlayerOneNumber,
+                finalContestantsNamesArray[1], finalistPlayerTwoNumber);
 
         System.out.println("--------------------------------------------------------------------------------------------");
 
@@ -893,21 +895,20 @@ public class RaceDayV3
         // isSameValue changes to false!
         do
         {
-            finalistPlayerOneTotalSteps = ThreadLocalRandom.current().nextInt(min, finalistPlayer1Number + 1) + playerFourName.length()
+            finalistPlayerOneTotalSteps = (finalistPlayerOneNumber + randomNumber.nextInt(finalistPlayerOneNumber) + 1) + playerOneName.length()
                     + randomNumber.nextInt(numberCalculation) + 1;
 
-            finalistPlayerTwoTotalSteps = ThreadLocalRandom.current().nextInt(min, finalistPlayer2Number + 1) + playerFourName.length()
+            finalistPlayerTwoTotalSteps = (finalistPlayerTwoNumber + randomNumber.nextInt(finalistPlayerTwoNumber) + 1) + playerOneName.length()
                     + randomNumber.nextInt(numberCalculation) + 1;
 
             // Check if the calculated numbers are the same
             if (finalistPlayerOneTotalSteps == finalistPlayerTwoTotalSteps)
             {
-                System.out.println("Re-calculating nuumbers");
-
+                // System.out.println("Re-calculating nuumbers");
+                isSameValue = false;
                 // Continue until the values are different!
                 continue;
             }
-            isSameValue = false;
             // The values are different move on with the code!
             break;
         } while (isSameValue = true);
@@ -941,35 +942,14 @@ public class RaceDayV3
             finalistPlayerOneTotalSteps, finalistPlayerTwoTotalSteps
         };
 
-        // Check if player 1's score is greater than player 2's score
-        if (finalistPlayerOneTotalSteps > finalistPlayerTwoTotalSteps)
-        {
-            // Print out that player 1's score is greater than player 2's score and declare them the winner!
-            System.out.printf("%s won with a final score of : %d congradulations", finalContestantsNamesArray[0],
-                    finalistPlayerOneTotalSteps);
-        } // Check if player 2's score is greater than player 1's score
-        else
-        {
-            // Print out that player 2's score is greater than player 1's score and decalre them the winner!
-            System.out.printf("%s won with a final score of : %d congradulations", finalContestantsNamesArray[1],
-                    finalistPlayerTwoTotalSteps);
-            System.out.println();
-        }
-
         // Sort the finalistTotalStepsArray array
         Arrays.sort(finalistTotalStepsArray);
 
         // Assign the highest value to the variable below
-        highestValue = finalistTotalStepsArray[finalistTotalStepsArray.length - 1];
-
         // With only two players up against eachother there is no need to assign the 
         // secondHighest value in the array as you can just print the opposite element 
         // in the array to state who won and who came in second position.
-        System.out.println("--------------------------------------------------------------------------------------------");
-
-        System.out.println("Final Scoreboard");
-
-        System.out.println("----------------");
+        highestValue = finalistTotalStepsArray[finalistTotalStepsArray.length - 1];
 
         // Checks if player 1's total steps is the highest value in the array
         if (finalistPlayerOneTotalSteps == highestValue)
@@ -988,6 +968,40 @@ public class RaceDayV3
             System.out.printf("Winner %s with %d steps", finalContestantsNamesArray[1], finalistPlayerTwoTotalSteps);
             System.out.println();
             System.out.printf("Runner up %s with %d steps", finalContestantsNamesArray[0], finalistPlayerOneTotalSteps);
+            System.out.println();
+        }
+
+        System.out.println("--------------------------------------------------------------------------------------------");
+
+        System.out.println("Final Scoreboard");
+
+        System.out.println("----------------");
+
+        if (finalistPlayerOneTotalSteps == highestValue)
+        {
+            System.out.printf("1st %s %d steps\n", finalContestantsNamesArray[0], finalistPlayerOneTotalSteps);
+            System.out.printf("2nd %s %d steps\n", finalContestantsNamesArray[1], finalistPlayerTwoTotalSteps);
+        } else
+        {
+            System.out.printf("1st %s %d steps\n", finalContestantsNamesArray[1], finalistPlayerTwoTotalSteps);
+            System.out.printf("2nd %s %d steps\n", finalContestantsNamesArray[0], finalistPlayerOneTotalSteps);
+        }
+
+        System.out.println("--------------------------------------------------------------------------------------------");
+
+        // Check if player 1's score is greater than player 2's score
+        if (finalistPlayerOneTotalSteps > finalistPlayerTwoTotalSteps)
+        {
+            // Print out that player 1's score is greater than player 2's score and declare them the winner!
+            System.out.printf("%s won with a final score of: %d congratulations", finalContestantsNamesArray[0],
+                    finalistPlayerOneTotalSteps);
+            System.out.println();
+        } // Check if player 2's score is greater than player 1's score
+        else
+        {
+            // Print out that player 2's score is greater than player 1's score and decalre them the winner!
+            System.out.printf("%s won with a final score of: %d congratulations", finalContestantsNamesArray[1],
+                    finalistPlayerTwoTotalSteps);
             System.out.println();
         }
 
