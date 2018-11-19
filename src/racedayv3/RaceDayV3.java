@@ -158,9 +158,9 @@ public class RaceDayV3
             if (keyboard.hasNextInt())
             {
                 // store that number in this variable
-                playerOneNumberChoice = keyboard.nextInt();
-                // Invlid entry
-            } else
+                playerOneNumberChoice = keyboard.nextInt();     
+            } // Invlid entry
+            else
             {
                 // Print out that the number entered is not valid
                 // and get the user to try again!
@@ -215,8 +215,8 @@ public class RaceDayV3
             {
                 // store that number in this variable
                 playerTwoNumberChoice = keyboard.nextInt();
-                // Invlid entry
-            } else
+            } // Invlid entry
+            else
             {
                 // Print out that the number entered is not valid
                 // and get the user to try again!
@@ -270,8 +270,8 @@ public class RaceDayV3
             {
                 // store that number in this variable
                 playerThreeNumberChoice = keyboard.nextInt();
-                // invalid input
-            } else
+            } // invalid input
+            else
             {
                 // Print out that the number entered is not valid
                 // and get the user to try again!
@@ -326,8 +326,8 @@ public class RaceDayV3
             {
                 // store that number in this variable
                 playerFourNumberChoice = keyboard.nextInt();
-                // Invalid input
-            } else
+            } // Invalid input
+            else
             {
                 // Print out that the number entered is not valid
                 // and get the user to try again!
@@ -789,8 +789,8 @@ public class RaceDayV3
             {
                 // store that number in this variable
                 finalistPlayerOneNumber = keyboard.nextInt();
-                // Invalid input
-            } else
+            } // Invalid input
+            else
             {
                 // Print out that the number entered is not valid
                 // and get the user to try again!
@@ -838,8 +838,8 @@ public class RaceDayV3
             {
                 // store that number in this variable
                 finalistPlayerTwoNumber = keyboard.nextInt();
-                // Invalid input
-            } else
+            } // Invalid input
+            else
             {
                 // Print out that the number entered is not valid
                 // and get the user to try again!
@@ -978,13 +978,16 @@ public class RaceDayV3
         System.out.println("Final Scoreboard");
 
         System.out.println("----------------");
-
+        // If this condition is true,
         if (finalistPlayerOneTotalSteps == highestValue)
         {
+            // print out these statements
             System.out.printf("1st %s %d steps\n", finalContestantsNamesArray[0], finalistPlayerOneTotalSteps);
             System.out.printf("2nd %s %d steps\n", finalContestantsNamesArray[1], finalistPlayerTwoTotalSteps);
-        } else
+        } // If the condition is false,
+        else
         {
+            // print out these statements
             System.out.printf("1st %s %d steps\n", finalContestantsNamesArray[1], finalistPlayerTwoTotalSteps);
             System.out.printf("2nd %s %d steps\n", finalContestantsNamesArray[0], finalistPlayerOneTotalSteps);
         }
